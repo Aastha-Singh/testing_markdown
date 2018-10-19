@@ -13,13 +13,13 @@ python3 create_package.py --package_name multitask \
 ```
 
 #### Arguments:
-```
-1. package_name: Provide name of the package
-2. config_file: Provide name of the configuration file to used to train the model
-3. utils_file: Provide name of the configuration file to used to train the model
-4. main_file: Provide name of the configuration file to used to train the model
-5. model_file: Provide name of the configuration file to used to train the model
-6. cloud: This will be "True" if package is to be used on cloud, otherwise "False"
+
+* **package_name**: Provide name of the package
+* **config_file**: Provide name of the configuration file to used to train the model
+* **utils_file**: Provide name of the configuration file to used to train the model
+* **main_file**: Provide name of the configuration file to used to train the model
+* **model_file**: Provide name of the configuration file to used to train the model
+* **cloud**: This will be "True" if package is to be used on cloud, otherwise "False"
 ```
 
 
