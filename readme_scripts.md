@@ -2,7 +2,7 @@
 
 This script automatically creates package to be used to train model either on local or on cloud.
 
-#### Example:
+#### Example
 ```
 python3 create_package.py --package_name multitask \
 	--config_file multitask_config_cloud.py \
@@ -12,14 +12,14 @@ python3 create_package.py --package_name multitask \
 	--cloud True
 ```
 
-#### Arguments:
+#### Arguments
 
-* **package_name**: Provide name of the package
-* **config_file**: Provide name of the configuration file to used to train the model
-* **utils_file**: Provide name of the configuration file to used to train the model
-* **main_file**: Provide name of the configuration file to used to train the model
-* **model_file**: Provide name of the configuration file to used to train the model
-* **cloud**: This will be "True" if package is to be used on cloud, otherwise "False"
+* **package_name**: Specify name of the package
+* **config_file**: Specify name of the configuration file to used to train the model
+* **utils_file**: Specify name of the utils file to used to train the model
+* **main_file**: Specify name of the main file to used to train the model
+* **model_file**: Specify name of the model file to used to train the model
+* **cloud**: This will be _True_ if package is to be used on cloud, otherwise _False_
 
 
 ### train_cloulml.sh
@@ -27,7 +27,7 @@ python3 create_package.py --package_name multitask \
 
 This script train model on Google Cloud ML.
 
-#### Example:
+#### Example
 ```
 gcloud ml-engine jobs submit training $JOB_NAME \
 	--stream-logs \
@@ -42,7 +42,7 @@ gcloud ml-engine jobs submit training $JOB_NAME \
 	--config_file multitask.config.multitask_config_cloud
 ```
 
-#### Arguments:
+#### Arguments
 
 * **job**: It is optional to give job name else it will take default name
 * **stream-logs**: Block until job completion and stream the logs while the job runs
@@ -62,7 +62,7 @@ gcloud ml-engine jobs submit training $JOB_NAME \
 
 This script train model on your local machine
 
-#### Example:
+#### Example
 ```
 gcloud ml-engine local train 
 	--package-path=../package/local/multitask-0.1.tar.gz \
@@ -71,7 +71,7 @@ gcloud ml-engine local train
 	--config_file=multitask.config.multitask_config_local
 ```
 
-#### Arguments:
+#### Arguments
 
 * **package-path**: Specify path where package is stored
 * **module-name**: Specify path to the module file
