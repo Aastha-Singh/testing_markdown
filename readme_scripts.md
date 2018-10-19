@@ -46,7 +46,7 @@ gcloud ml-engine jobs submit training $JOB_NAME \
 
 #### Arguments:
 ```
-1. job: It is optional to give job name else it will take default name
+1. **job**: It is optional to give job name else it will take default name
 2. stream-logs: Block until job completion and stream the logs while the job runs
 3. runtime-version: Google Cloud ML Engine runtime version for this job
 4. staging-bucket: Bucket in which to stage training archives
