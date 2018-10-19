@@ -14,12 +14,12 @@ python3 create_package.py --package_name multitask \
 
 #### Arguments:
 ```
-package_name: Provide name of the package
-config_file: Provide name of the configuration file to used to train the model
-utils_file: Provide name of the configuration file to used to train the model
-main_file: Provide name of the configuration file to used to train the model
-model_file: Provide name of the configuration file to used to train the model
-cloud: This will be "True" if package is to be used on cloud, otherwise "False"
+1. package_name: Provide name of the package
+2. config_file: Provide name of the configuration file to used to train the model
+3. utils_file: Provide name of the configuration file to used to train the model
+4. main_file: Provide name of the configuration file to used to train the model
+5. model_file: Provide name of the configuration file to used to train the model
+6. cloud: This will be "True" if package is to be used on cloud, otherwise "False"
 ```
 
 
@@ -75,7 +75,7 @@ gcloud ml-engine local train
 
 #### Arguments:
 ```
-package-path: Specify path where package is stored
-module-name: Specify path to the module file
-config_file: Specify name of the configuration file to be used by the model
+1. package-path: Specify path where package is stored
+2. module-name: Specify path to the module file
+3. config_file: Specify name of the configuration file to be used by the model
 ```
