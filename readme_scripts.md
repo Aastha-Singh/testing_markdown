@@ -4,16 +4,23 @@ This script automatically creates package to be used to train model either on lo
 
 #### Arguments:
 ```
-* package_name: Provide name of the package
-* config_file: Provide name of the configuration file to used to train the model
-* utils_file: Provide name of the configuration file to used to train the model
-* main_file: Provide name of the configuration file to used to train the model
-* model_file: Provide name of the configuration file to used to train the model
-* cloud: This will be "True" if package is to be used on cloud, otherwise "False"
+package_name: Provide name of the package
+config_file: Provide name of the configuration file to used to train the model
+utils_file: Provide name of the configuration file to used to train the model
+main_file: Provide name of the configuration file to used to train the model
+model_file: Provide name of the configuration file to used to train the model
+cloud: This will be "True" if package is to be used on cloud, otherwise "False"
 ```
 
-
-
+#### Example:
+```
+python3 create_package.py --package_name multitask \
+	--config_file multitask_config_cloud.py \
+	--utils_file read_tfrecord.py \
+	--main_file trainer_cnn.py \
+	--model_file cnn_model.py \
+	--cloud True
+```
 
 ### train_cloulml.sh
 
@@ -34,6 +41,22 @@ This script train model on Google Cloud ML.
 * config_file: Specify name of the configuration file to be used by the model
 ```
 
+#### Example:
+```
+gcloud ml-engine jobs submit training $JOB_NAME \
+	--stream-logs \
+	--runtime-version 1.9 \
+	--staging-bucket gs://powertrain \
+	--module-name multitask.src.trainer_cnn \
+	--packages ../package/cloud/multitask-0.1.tar.gz \
+	--region us-central1 \
+	--python-version 3.5 \
+	--scale-tier BASIC \
+	--\
+	--config_file multitask.config.multitask_config_cloud
+```
+
+
 
 ### train_local.sh
 
@@ -45,7 +68,11 @@ This script train model on your local machine
 * module-name: Specify path to the module file
 * config_file: Specify name of the configuration file to be used by the model
 ```
-
-
-
-# testing_markdown
+#### Example:
+```
+gcloud ml-engine local train 
+	--package-path=../package/local/multitask-0.1.tar.gz \
+	--module-name=multitask.src.trainer_cnn \
+	--\
+	--config_file=multitask.config.multitask_config_local
+```
